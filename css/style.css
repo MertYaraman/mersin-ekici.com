@@ -169,7 +169,7 @@ a {
 
 .logo-text {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     font-weight: 900;
     color: var(--text-main);
     letter-spacing: 1px;
@@ -247,9 +247,13 @@ a {
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--text-muted);
     margin-bottom: 40px;
+}
+
+.hero-subtitle p {
+    margin-bottom: 12px;
 }
 
 .hero-actions {
@@ -453,17 +457,25 @@ footer {
 
 /* Mobile Devices */
 @media (max-width: 768px) {
+    .logo-text {
+        font-size: 1.8rem;
+    }
+    
+    .hero {
+        background-attachment: scroll; /* Fix for iOS background disappearing bug */
+    }
+
     .hero-overlay {
         background: linear-gradient(180deg, rgba(11,15,25,0.7) 0%, rgba(11,15,25,0.95) 100%);
     }
 
     .hero-content {
-        margin-top: 60px;
+        margin-top: 80px;
         text-align: center;
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 
     .hero-actions {
