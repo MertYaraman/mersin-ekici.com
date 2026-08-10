@@ -169,7 +169,7 @@ a {
 
 .logo-text {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
+    font-size: 3.2rem;
     font-weight: 900;
     color: var(--text-main);
     letter-spacing: 1px;
@@ -203,28 +203,45 @@ a {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 0 5%;
-    background-image: url('../img/hero.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(243, 156, 18, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(225, 48, 108, 0.05) 0%, transparent 50%);
+    padding-top: 80px; /* Space for navbar */
+    overflow: hidden;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+.hero-split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(11,15,25,0.95) 0%, rgba(11,15,25,0.7) 50%, rgba(11,15,25,0.2) 100%);
-    z-index: 1;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 650px;
+    flex: 1;
+    max-width: 600px;
     animation: fadeInUp 1s ease-out;
+    z-index: 2;
+}
+
+.hero-image-container {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    justify-content: flex-end;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-img-element {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 2px solid rgba(255,255,255,0.05);
+    object-fit: cover;
+    max-height: 70vh; /* Prevents it from getting too tall */
 }
 
 .badge {
@@ -250,6 +267,7 @@ a {
     font-size: 1.15rem;
     color: var(--text-muted);
     margin-bottom: 40px;
+    font-style: italic;
 }
 
 .hero-subtitle p {
@@ -330,6 +348,39 @@ a {
 .service-card p {
     color: var(--text-muted);
     font-size: 0.95rem;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 60px 0 20px 0;
+}
+
+.gallery-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.gallery-item {
+    flex: 1;
+    max-width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 450px;
 }
 
 /* ==========================================================================
@@ -458,20 +509,41 @@ footer {
 /* Mobile Devices */
 @media (max-width: 768px) {
     .logo-text {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
     }
     
     .hero {
-        background-attachment: scroll; /* Fix for iOS background disappearing bug */
+        padding-top: 100px;
+        padding-bottom: 50px;
     }
 
-    .hero-overlay {
-        background: linear-gradient(180deg, rgba(11,15,25,0.7) 0%, rgba(11,15,25,0.95) 100%);
+    .hero-split {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
     }
 
     .hero-content {
-        margin-top: 80px;
-        text-align: center;
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .hero-image-container {
+        max-width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-img-element {
+        max-height: 50vh;
+    }
+
+    .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .gallery-item {
+        max-width: 100%;
     }
 
     .hero-title {

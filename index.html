@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body>
 
@@ -41,28 +41,31 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <!-- The background image is set in CSS -->
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="badge">7/24 Kesintisiz Hizmet</div>
-            <h1 class="hero-title">Yolda Kalmaya<br><span class="highlight">Son Verin.</span></h1>
-            <div class="hero-subtitle">
-                <p>Ben <strong>Sercan Sarı</strong>, profesyonel çekici ve yol yardım uzmanıyım. Aracınız arızalandığında, kaza yaptığında veya yolda kaldığınızda hızlı ve güvenilir çözümler sunuyorum.</p>
-                <p>Çekici hizmeti, araç taşıma ve yol yardım ihtiyaçlarınız için bulunduğunuz noktaya geliyor, aracınızı güvenli bir şekilde istediğiniz yere ulaştırıyorum.</p>
-                <p class="features" style="color: #f39c12; font-weight: 600;">Hızlı müdahale • Güvenli taşıma • Profesyonel hizmet</p>
-                <p>📞 Yardıma ihtiyacınız olduğunda bir telefon kadar yakınımdayım.</p>
+        <div class="container hero-split">
+            <div class="hero-content">
+                <div class="badge">7/24 Kesintisiz Hizmet</div>
+                <h1 class="hero-title">Yolda Kalmaya<br><span class="highlight">Son Verin.</span></h1>
+                <div class="hero-subtitle">
+                    <p>Ben <strong>Sercan Sarı</strong>, profesyonel çekici ve yol yardım uzmanıyım. Aracınız arızalandığında, kaza yaptığında veya yolda kaldığınızda hızlı ve güvenilir çözümler sunuyorum.</p>
+                    <p>Çekici hizmeti, araç taşıma ve yol yardım ihtiyaçlarınız için bulunduğunuz noktaya geliyor, aracınızı güvenli bir şekilde istediğiniz yere ulaştırıyorum.</p>
+                    <p class="features" style="color: #f39c12; font-weight: 600;">Hızlı müdahale • Güvenli taşıma • Profesyonel hizmet</p>
+                    <p>📞 Yardıma ihtiyacınız olduğunda bir telefon kadar yakınımdayım.</p>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="tel:+905432636006" class="btn btn-primary pulse-animation">
+                        <i class="fa-solid fa-phone"></i> Acil Ara
+                    </a>
+                    <a href="https://wa.me/905432636006" target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/ds_otokurtarma/" target="_blank" class="btn btn-secondary">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                </div>
             </div>
-            
-            <div class="hero-actions">
-                <a href="tel:+905432636006" class="btn btn-primary pulse-animation">
-                    <i class="fa-solid fa-phone"></i> Acil Ara
-                </a>
-                <a href="https://wa.me/905432636006" target="_blank" class="btn btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="https://www.instagram.com/ds_otokurtarma/" target="_blank" class="btn btn-secondary">
-                    <i class="fa-brands fa-instagram"></i> Instagram
-                </a>
+            <div class="hero-image-container">
+                <img src="img/hero_v2.jpg" alt="Seymen Oto Kurtarma Sercan Sarı" class="hero-img-element">
             </div>
         </div>
     </section>
@@ -77,18 +80,48 @@
             <div class="services-grid">
                 <div class="service-card glass-effect fade-in">
                     <div class="icon-box"><i class="fa-solid fa-truck-pickup"></i></div>
-                    <h3>Oto Çekici</h3>
-                    <p>Arızalanan veya kazaya karışan aracınızı güvenle istediğiniz noktaya taşıyoruz.</p>
+                    <h3>Yol Yardımı ve Çekici</h3>
+                    <p>Arızalanan aracınız için 7/24 anında müdahale ediyor, güvenle kurtarıyoruz.</p>
                 </div>
                 <div class="service-card glass-effect fade-in">
-                    <div class="icon-box"><i class="fa-solid fa-car-battery"></i></div>
-                    <h3>Akü Takviye</h3>
-                    <p>Akünüz bittiğinde yolda kalmayın. Anında takviye ile yola devam edin.</p>
+                    <div class="icon-box"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                    <h3>Kayar Kasa Hizmeti</h3>
+                    <p>Modern kayar kasa aracımızla araçlarınızı sıfır risk ve maksimum güvenlikle yüklüyoruz.</p>
+                </div>
+                <div class="service-card glass-effect fade-in">
+                    <div class="icon-box"><i class="fa-solid fa-link"></i></div>
+                    <h3>Aparatlı Çekim</h3>
+                    <p>Tekerlekleri kilitli veya hareket edemeyen araçlarınızı özel aparatlarımızla zarar vermeden çekiyoruz.</p>
+                </div>
+                <div class="service-card glass-effect fade-in">
+                    <div class="icon-box"><i class="fa-solid fa-truck-moving"></i></div>
+                    <h3>Vinç Hizmeti</h3>
+                    <p>Kanala düşen, devrilen veya ağır kurtarma gerektiren durumlarda profesyonel vinç desteği sağlıyoruz.</p>
                 </div>
                 <div class="service-card glass-effect fade-in">
                     <div class="icon-box"><i class="fa-solid fa-wrench"></i></div>
-                    <h3>Yerinde Tamir</h3>
-                    <p>Ufak arızalar için aracınızı yerinde onararak zaman kaybetmenizi önlüyoruz.</p>
+                    <h3>Yerinde Lastik Tamiri ve Bakımı</h3>
+                    <p>Yolda lastik sorunu yaşadığınızda bulunduğunuz noktada hızlı onarım ve bakım yapıyoruz.</p>
+                </div>
+                <div class="service-card glass-effect fade-in">
+                    <div class="icon-box"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <h3>81 İle Kesintisiz Hizmet</h3>
+                    <p>Filomuzdaki 2 tam donanımlı aracımız ile Türkiye'nin 81 iline güvenilir araç transferi yapıyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minimalist Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Çalışmalarımız</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="img/hero_v3.jpg" alt="Seymen Şehirler Arası Çekici">
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="img/gallery2.jpg" alt="Çekici Hizmeti Çalışması">
                 </div>
             </div>
         </div>
@@ -141,6 +174,6 @@
     </footer>
 
     <!-- JS -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=14"></script>
 </body>
 </html>
