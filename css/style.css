@@ -518,6 +518,9 @@ footer {
     }
     
     .hero {
+        background-image: linear-gradient(180deg, rgba(11,15,25,0.7) 0%, rgba(11,15,25,0.95) 100%), url('../img/hero_v2.jpg');
+        background-size: cover;
+        background-position: center top;
         padding-top: 130px; /* More room for navbar */
         padding-bottom: 60px;
     }
@@ -525,7 +528,7 @@ footer {
     .hero-split {
         flex-direction: column;
         text-align: center;
-        gap: 50px; /* More breathing room */
+        gap: 0; /* Image is background now, no gap needed */
     }
 
     .hero-content {
@@ -534,14 +537,7 @@ footer {
     }
 
     .hero-image-container {
-        max-width: 100%;
-        justify-content: center;
-    }
-    
-    .hero-img-element {
-        max-height: none; /* Prevents the image from being cut in half on small screens */
-        width: 100%;
-        height: auto;
+        display: none; /* Hide the physical image, it's now a background */
     }
 
     .gallery-grid {
