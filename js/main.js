@@ -85,8 +85,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 sendLocationBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Konum Bulunuyor...';
                 sendLocationBtn.style.pointerEvents = 'none';
 
+                let isResolved = false;
+
+                const executeFallback = () => {
+                    if (isResolved) return;
+                    isResolved = true;
+                    const fallbackMessage = "Merhaba Sercan Bey, yolda kaldım. Konumumu WhatsApp üzerinden gönderiyorum.";
+                    const fallbackUrl = `https://wa.me/905432636006?text=${encodeURIComponent(fallbackMessage)}`;
+                    sendLocationBtn.innerHTML = originalText;
+                    sendLocationBtn.style.pointerEvents = 'auto';
+                    window.open(fallbackUrl, '_blank');
+                };
+
+                // Eğer tarayıcı 3.5 saniye içinde cevap vermezse bekleme, direkt WhatsApp'a at!
+                const timeoutId = setTimeout(executeFallback, 3500);
+
                 navigator.geolocation.getCurrentPosition(
                     (position) => {
+                        if (isResolved) return;
+                        isResolved = true;
+                        clearTimeout(timeoutId);
+
                         const lat = position.coords.latitude;
                         const lng = position.coords.longitude;
                         const message = `Merhaba Sercan Bey, yolda kaldım. Konumum: https://www.google.com/maps?q=${lat},${lng}`;
@@ -97,12 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         window.open(whatsappUrl, '_blank');
                     },
                     (error) => {
-                        console.error("Konum hatası:", error);
-                        alert("Konum alınamadı! Lütfen cihazınızın Konum (GPS) özelliğini açın ve tarayıcıya izin verin.");
-                        sendLocationBtn.innerHTML = originalText;
-                        sendLocationBtn.style.pointerEvents = 'auto';
+                        console.warn("Konum erişimi reddedildi veya alınamadı:", error);
+                        clearTimeout(timeoutId);
+                        executeFallback();
                     },
-                    { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+                    { enableHighAccuracy: false, timeout: 5000, maximumAge: 0 }
                 );
             } else {
                 alert("Tarayıcınız konum özelliğini desteklemiyor.");
