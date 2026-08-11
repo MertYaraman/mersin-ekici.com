@@ -19,8 +19,10 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=16">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css?v=31">
 </head>
 <body>
 
@@ -44,12 +46,10 @@
         <div class="container hero-split">
             <div class="hero-content">
                 <div class="badge">7/24 Kesintisiz Hizmet</div>
-                <h1 class="hero-title">Yolda Kalmaya<br><span class="highlight">Son Verin.</span></h1>
+                <h1 class="hero-title" style="font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.3;">30 Yıllık Firma Geçmişi, <br><span class="highlight">16 Yıllık Bireysel Çekici Tecrübesiyle</span><br>Güveniniz İçin Yollardayız.</h1>
                 <div class="hero-subtitle">
-                    <p>Ben <strong>Sercan Sarı</strong>, profesyonel çekici ve yol yardım uzmanıyım. Aracınız arızalandığında, kaza yaptığında veya yolda kaldığınızda hızlı ve güvenilir çözümler sunuyorum.</p>
-                    <p>Çekici hizmeti, araç taşıma ve yol yardım ihtiyaçlarınız için bulunduğunuz noktaya geliyor, aracınızı güvenli bir şekilde istediğiniz yere ulaştırıyorum.</p>
-                    <p class="features" style="color: #f39c12; font-weight: 600;">Hızlı müdahale • Güvenli taşıma • Profesyonel hizmet</p>
-                    <p>📞 Yardıma ihtiyacınız olduğunda bir telefon kadar yakınımdayım.</p>
+                    <p>Türkiye'nin <strong>81 ilinde</strong> ayak izimiz, yollarda imzamız var! Nerede olursanız olun; aracınız yolda kaldığında profesyonel filomuzla hızla konumunuza ulaşıyor, güvenli transferi sağlıyoruz.</p>
+                    <p class="features" style="color: #f39c12; font-weight: 600; font-size: 1.15rem; margin-top: 15px; letter-spacing: 0.5px;">Mesafeleri Dert Etmeyin, Çözüm Bir Telefon Uzağınızda!</p>
                 </div>
                 
                 <div class="hero-actions">
@@ -59,6 +59,9 @@
                     <a href="https://wa.me/905432636006" target="_blank" class="btn btn-whatsapp">
                         <i class="fa-brands fa-whatsapp"></i> WhatsApp
                     </a>
+                    <button id="sendLocationBtn" class="btn btn-location">
+                        <i class="fa-solid fa-location-crosshairs"></i> Konum Gönder
+                    </button>
                     <a href="https://www.instagram.com/ds_otokurtarma/" target="_blank" class="btn btn-secondary">
                         <i class="fa-brands fa-instagram"></i> Instagram
                     </a>
@@ -116,13 +119,48 @@
     <section class="gallery" id="gallery">
         <div class="container">
             <h2 class="section-title">Çalışmalarımız</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item fade-in">
-                    <img src="img/hero_v3.jpg" alt="Seymen Şehirler Arası Çekici">
+            <div class="swiper gallerySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider1.jpg" alt="Seymen Oto Kurtarma Çalışması">
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider2.jpg" alt="Oto Çekici Hizmeti">
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider3.jpg" alt="Yol Yardım Çalışması 1">
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider4.jpg" alt="Yol Yardım Çalışması 2">
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider5.jpg" alt="Yol Yardım Çalışması 3">
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider6.jpg" alt="Yol Yardım Çalışması 4">
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider7.jpg" alt="Yol Yardım Çalışması 5">
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider8.jpg" alt="Yol Yardım Çalışması 6">
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider9.jpg" alt="Yol Yardım Çalışması 7">
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider10.jpg" alt="Yol Yardım Çalışması 8">
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider11.jpg" alt="Yol Yardım Çalışması 9">
+                    </div>
+                    <div class="swiper-slide gallery-item">
+                        <img src="img/slider12.jpg" alt="Yol Yardım Çalışması 10">
+                    </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="img/gallery2.jpg" alt="Çekici Hizmeti Çalışması">
-                </div>
+                <!-- Navigation buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
@@ -176,7 +214,9 @@
         </div>
     </footer>
 
-    <!-- JS -->
-    <script src="js/main.js?v=17"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js?v=29"></script>
 </body>
 </html>

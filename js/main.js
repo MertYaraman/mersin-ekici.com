@@ -52,4 +52,61 @@ document.addEventListener('DOMContentLoaded', () => {
     if(yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+    // 5. Initialize Gallery Swiper
+    if (document.querySelector('.gallerySwiper')) {
+        new Swiper('.gallerySwiper', {
+            slidesPerView: 1, // Default to 1 slide for mobile
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 5000, // Auto play every 5 seconds
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                }
+            }
+        });
+    }
+
+    // --- One-Click Location Sharing Logic ---
+    const sendLocationBtn = document.getElementById('sendLocationBtn');
+    if (sendLocationBtn) {
+        sendLocationBtn.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                const originalText = sendLocationBtn.innerHTML;
+                sendLocationBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Konum Bulunuyor...';
+                sendLocationBtn.style.pointerEvents = 'none';
+
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                        const message = `Merhaba Sercan Bey, yolda kaldım. Konumum: https://www.google.com/maps?q=${lat},${lng}`;
+                        const whatsappUrl = `https://wa.me/905432636006?text=${encodeURIComponent(message)}`;
+                        
+                        sendLocationBtn.innerHTML = originalText;
+                        sendLocationBtn.style.pointerEvents = 'auto';
+                        window.open(whatsappUrl, '_blank');
+                    },
+                    (error) => {
+                        console.error("Konum hatası:", error);
+                        alert("Konum alınamadı! Lütfen cihazınızın Konum (GPS) özelliğini açın ve tarayıcıya izin verin.");
+                        sendLocationBtn.innerHTML = originalText;
+                        sendLocationBtn.style.pointerEvents = 'auto';
+                    },
+                    { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+                );
+            } else {
+                alert("Tarayıcınız konum özelliğini desteklemiyor.");
+            }
+        });
+    }
 });
